@@ -17,6 +17,8 @@ This proxy converts OpenAI API requests to Dify API calls, allowing you to use a
 docker-compose up -d
 ```
 
+> Make sure `.env` defines `DIFY_API_BASE` (default `https://www.nas.bestfuture.top/v1`) and any other overrides before bringing the stack up; `docker-compose` loads these via `env_file`.
+
 ### 2. Make API Calls
 Use your Dify API key as the Bearer token:
 
@@ -36,7 +38,7 @@ Configure your OpenAI client to use:
 - **API Key**: Your Dify API Key
 
 ## Environment Variables
-- `DIFY_API_BASE` - Dify API base URL (default: `https://api.dify.ai/v1`)
+- `DIFY_API_BASE` - Dify API base URL (default: `https://www.nas.bestfuture.top/v1`, configurable via `.env` and loaded by `docker-compose` via `env_file`).
 - `PORT` - Server port (default: `8000`)
 
 No need to set `DIFY_API_KEY` in environment - it's passed per request!
